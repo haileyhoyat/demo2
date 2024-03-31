@@ -50,7 +50,8 @@ dirlistint = []
 dirlist = os.listdir('documents/')
 for file in dirlist:
   dirlistint.append(int(file.split(".")[0]))
-print(dirlistint.sort())
+list = dirlistint.sort()
+print(list)
   
 browser.quit
   
