@@ -46,8 +46,7 @@ html_source = browser.page_source
 attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
 
 #get the .csv file from the most previous scrape
-lst = os.listdir('documents/')
-print(lst.sort())
+print(os.listdir('documents/'))
   
 browser.quit
   
