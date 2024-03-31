@@ -24,7 +24,6 @@ jobs:
 
       - name: Running the Python script
         run: 
-          python test.py
           python Selenium-Template.py 
           
       - name: Commit and Push The Results From Python Selenium Action
