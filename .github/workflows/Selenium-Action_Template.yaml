@@ -23,7 +23,9 @@ jobs:
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
-        run: python Selenium-Template.py test.py
+        run: 
+          python Selenium-Template.py 
+          python test.py
         
       - name: Commit and Push The Results From Python Selenium Action
         run: |
