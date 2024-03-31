@@ -83,8 +83,7 @@ for file in attachment_table:
   if is_new_file:
     print(file_name)
 
-  #line #88 - 96 are new
-  
+  #list out all documents on webpage on the date of the scrape.
   #get the file name, file id, and today's date
   # file_name = file.find_element(By.CSS_SELECTOR, "span").text
   file_id = file.get_attribute("id")
