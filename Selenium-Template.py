@@ -35,6 +35,16 @@ driver = webdriver.Chrome(options = chrome_options)
 
 driver.get('https://clevelandoh.govqa.us/WEBAPP/_rs/(S(byev33xlbgyh0u2fgikb2om0))/AnswerDetail.aspx?sSessionID=&aid=74904')
 print(driver.title)
+
+html_source = browser.page_source
+
+#get files from the webpage
+attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
+
+#for each file on the webpage
+for file in attachment_table:
+  print(file)
+
 with open('./GitHub_Action_Results.txt', 'w') as f:
    f.write(f"This was written with a GitHub action {driver.title}")
 
