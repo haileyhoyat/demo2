@@ -44,7 +44,7 @@ attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
 
 #for each file on the webpage
 for file in attachment_table:
-  print(file)
+  print(file.find_element(By.CSS_SELECTOR, "span").text)
 
 with open('./GitHub_Action_Results.txt', 'w') as f:
    f.write(f"This was written with a GitHub action {browser.title}")
