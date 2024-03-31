@@ -78,10 +78,22 @@ for file in attachment_table:
       if file_name == row[0]:
         is_new_file = False
         break
-
+      
   #if file on the webpage is not listed from the most previous scrape, the file is a newly added file
   if is_new_file:
     print(file_name)
+
+  #line #88 - 96 are new
+  
+  #get the file name, file id, and today's date
+  # file_name = file.find_element(By.CSS_SELECTOR, "span").text
+  file_id = file.get_attribute("id")
+  time_stamp = date.today().strftime("%Y%m%d")
+
+  #create a new .csv (titled as today's date) to note down the files that are on the webpage today
+  with open("documents/" + time_stamp+".csv", "a", newline="") as csvfile:
+      writer = csv.writer(csvfile)
+      writer.writerow([file_name, file_id, time_stamp])
   
 browser.quit
   
