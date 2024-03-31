@@ -45,32 +45,8 @@ html_source = browser.page_source
 #get files from the webpage
 attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
 
-#for each file on the webpage
-for file in attachment_table:
-
-  #get the file name
-  file_name = file.find_element(By.CSS_SELECTOR, "span").text
-  
-  #get the .csv file from the most previous scrape
-  arr = os.listdir('documents/')[-1]
-  
-  #assume that the file on the webpage is a new file that was not on the webpage from the most previous scrape
-  is_new_file = True
-
-  #check if the file on the webpage is listed from the most previous scrape
-  with open('documents/'+arr, newline='') as csvfile:
-    spamreader = csv.reader(csvfile)
-    for row in spamreader:
-      #if the file on the webpage is listed from the most previous scrape, 
-      #the file is not a newly added file therefore is_new_file is false
-      #break, and continue onto the next file on the webpage
-      if file_name == row[0]:
-        is_new_file = False
-        break
-
-  #if file on the webpage is not listed from the most previous scrape, the file is a newly added file
-  if is_new_file:
-    print(file_name)
+#get the .csv file from the most previous scrape
+print(os.listdir('documents/')[-1])
   
 browser.quit
   
