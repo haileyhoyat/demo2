@@ -2,6 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from datetime import date
+import csv
+import os
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
@@ -42,10 +45,13 @@ html_source = browser.page_source
 #get files from the webpage
 attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
 
+arr = os.listdir('documents/')
+print(arr)
+
 #for each file on the webpage
 for file in attachment_table:
   print(file.find_element(By.CSS_SELECTOR, "span").text)
-
+  
 with open('./GitHub_Action_Results.txt', 'w') as f:
    f.write(f"This was written with a GitHub action {browser.title}")
 
