@@ -24,9 +24,9 @@ jobs:
 
       - name: Running the Python script
         run: 
-          python Selenium-Template.py 
           python test.py
-        
+          python Selenium-Template.py 
+          
       - name: Commit and Push The Results From Python Selenium Action
         run: |
          git config --global user.name "github-actions[bot]"
