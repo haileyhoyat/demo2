@@ -51,6 +51,7 @@ dirlist = os.listdir('documents/')
 for file in dirlist:
   dirlistint.append(int(file.split(".")[0]))
 print(dirlistint)
+print(max(dirlistint))
   
 browser.quit
   
