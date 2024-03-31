@@ -39,7 +39,7 @@ print(driver.title)
 html_source = browser.page_source
 
 #get files from the webpage
-attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
+attachment_table = driver.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
 
 #for each file on the webpage
 for file in attachment_table:
