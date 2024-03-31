@@ -52,7 +52,7 @@ for file in attachment_table:
   file_name = file.find_element(By.CSS_SELECTOR, "span").text
   
   #get the .csv file from the most previous scrape
-  arr = os.listdir('documents/')[-2]
+  arr = os.listdir('documents/')[-1]
   
   #assume that the file on the webpage is a new file that was not on the webpage from the most previous scrape
   is_new_file = True
