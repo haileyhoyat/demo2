@@ -49,8 +49,8 @@ attachment_table = browser.find_elements(By.CSS_SELECTOR, "a.dxbButton_Moderno")
 dirlistint = []
 dirlist = os.listdir('documents/')
 for file in dirlist:
-  dirlistint.append(int(file.split(".")))
-print(dirlistint)
+  dirlistint.append(int(file.split(".")[0]))
+print(dirlistint.sort())
   
 browser.quit
   
