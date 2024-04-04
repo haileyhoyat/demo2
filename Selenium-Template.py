@@ -54,10 +54,10 @@ for file in dirlist:
   dirlistint.append(int(file.split(".")[0]))
 most_recent = str(max(dirlistint)) + '.csv'
 print(dirlistint)
-print("Most recent : " + max(dirlistint))
+print("Most recent : " + str(max(dirlistint)))
 
-#dirlistint.remove(most_recent)
-#print("Second most recent : " + max(dirlistint))
+dirlistint.remove(most_recent)
+print("Second most recent : " + str(max(dirlistint)))
 
 #for each file on the webpage
 for file in attachment_table:
