@@ -56,9 +56,6 @@ most_recent = str(max(dirlistint)) + '.csv'
 print(dirlistint)
 print("Most recent : " + str(max(dirlistint)))
 
-dirlistint.remove(most_recent)
-print("Second most recent : " + str(max(dirlistint)))
-
 #for each file on the webpage
 for file in attachment_table:
 
@@ -93,9 +90,9 @@ for file in attachment_table:
   time_stamp = date.today().strftime("%Y%m%d")
 
   #create a new .csv (titled as today's date) to note down the files that are on the webpage today
-  #with open("documents/" + time_stamp+".csv", "a", newline="") as csvfile:
-      #writer = csv.writer(csvfile)
-      #writer.writerow([file_name, file_id, time_stamp])
+  with open("documents/" + time_stamp+".csv", "a", newline="") as csvfile:
+      writer = csv.writer(csvfile)
+      writer.writerow([file_name, file_id, time_stamp])
   
 browser.quit
   
